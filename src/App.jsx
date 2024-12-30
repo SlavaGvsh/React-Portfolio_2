@@ -5,6 +5,8 @@ import {
   About,
   SkillsInfo,
   Services,
+  Portfolio,
+  GetInTouch,
 } from "./components/index.js";
 // import { mainImg } from "./assets/images/index.js";
 // import "./index.css"
@@ -18,6 +20,8 @@ function App() {
         <About />
         <SkillsInfo />
         <Services />
+        <Portfolio />
+        <GetInTouch />
       </main>
       <Footer />
     </>
