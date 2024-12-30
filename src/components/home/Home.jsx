@@ -26,7 +26,7 @@ const Home = () => {
           </a>
         </div>
         <div className="home-info">
-          <h1>Hi, I am Ilay</h1>
+          <h1>Hi, I am Slava</h1>
           <h3>Front-end Developer</h3>
           <p>
             I create stunning websites for your business, Highly experienced in

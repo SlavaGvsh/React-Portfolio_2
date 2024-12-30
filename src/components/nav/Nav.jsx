@@ -1,9 +1,27 @@
+import { Link } from "react-scroll";
+
 import "./Nav.css";
 
-const Nav = () => {
+const Nav = ({ isMenuOpen }) => {
+  const items = [
+    "home",
+    "about",
+    "skills",
+    "services",
+    "portfolio",
+    "clients",
+    "contact",
+  ];
   return (
-    <nav className="nav">
-      <ul className="nav-menu">
+    <nav className={!isMenuOpen ? "nav " : "nav active"}>
+      <div className={!isMenuOpen ? "nav-menu" : "nav-menu active"}>
+        {items.map((item, index) => (
+          <Link to={`#${item}`} key={index} className="nav-link">
+            {item}
+          </Link>
+        ))}
+      </div>
+      {/* <ul className="nav-menu">
         <li className="nav-item">
           <a href="#home" className="nav-link active">
             home
@@ -34,7 +52,7 @@ const Nav = () => {
             Contact
           </a>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   );
 };

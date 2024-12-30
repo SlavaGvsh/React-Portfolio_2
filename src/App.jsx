@@ -1,4 +1,11 @@
-import { Header, Footer, Home, About } from "./components/index.js";
+import {
+  Header,
+  Footer,
+  Home,
+  About,
+  SkillsInfo,
+  Services,
+} from "./components/index.js";
 // import { mainImg } from "./assets/images/index.js";
 // import "./index.css"
 
@@ -8,11 +15,9 @@ function App() {
       <Header />
       <main>
         <Home />
-        {/* <div className="container">
-          <h1>Vite + React</h1>
-          <img src={mainImg} alt="" />
-        </div> */}
         <About />
+        <SkillsInfo />
+        <Services />
       </main>
       <Footer />
     </>
