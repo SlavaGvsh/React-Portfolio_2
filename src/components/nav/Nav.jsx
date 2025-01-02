@@ -1,8 +1,9 @@
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 
 import "./Nav.css";
 
-const Nav = ({ isMenuOpen }) => {
+const Nav = ({ isMenuOpen, handleMenuClick }) => {
   const items = [
     "home",
     "about",
@@ -16,9 +17,19 @@ const Nav = ({ isMenuOpen }) => {
     <nav className={!isMenuOpen ? "nav " : "nav active"}>
       <div className={!isMenuOpen ? "nav-menu" : "nav-menu active"}>
         {items.map((item, index) => (
-          <Link to={`#${item}`} key={index} className="nav-link">
+          <ScrollLink
+            to={item}
+            key={index}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={400}
+            className="nav-link"
+            onClick={handleMenuClick}
+            
+          >
             {item}
-          </Link>
+          </ScrollLink>
         ))}
       </div>
       {/* <ul className="nav-menu">

@@ -50,8 +50,9 @@
   color: #fff;
   font-size: var(--normal-font-size);
   font-weight: 500;
-  width: 188px;
+  width: 215px;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 4px;
   margin-top: 25px;

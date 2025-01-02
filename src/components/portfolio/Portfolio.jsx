@@ -9,7 +9,7 @@ const Portfolio = () => {
   return (
     <section className="portfolio section" id="portfolio">
       <div className="container flex-center">
-        <SectionTitle tile="Portfolio" subTitle="Portfolio" />
+        <SectionTitle title="Portfolio" subTitle="Portfolio" />
         <div className="portfolio-wrapper">
           {portfolioData.map((item) => {
             <PortfolioItem key={item.id}/>
