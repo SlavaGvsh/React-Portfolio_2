@@ -1,6 +1,5 @@
 
 export {default as Header} from "./header/Header.jsx"
-export {default as Footer} from "./footer/Footer.jsx"
 export {default as Home} from "./home/Home.jsx"
 export {default as About} from "./about/About.jsx"
 export {default as SkillsInfo} from "./skills/SkillsInfo.jsx"
@@ -9,3 +8,6 @@ export {default as Portfolio} from "./portfolio/Portfolio.jsx"
 export {default as GetInTouch} from "./getInTouch/GetInTouch.jsx"
 export {default as OurClients} from "./ourClients/OurClients.jsx"
 export {default as ContactSection} from "./contactSection/contactSection.jsx"
+export {default as Footer} from "./footer/Footer.jsx"
+export {default as ScrollToTop} from "./scrollToTop/ScrollToTop.jsx"
+export {default as ThemeToggle} from "./themeToggle/ThemeToggle.jsx"

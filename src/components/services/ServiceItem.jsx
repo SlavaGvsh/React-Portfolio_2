@@ -11,6 +11,7 @@ const ServiceItem = ({ services }) => {
   const closeModal = () => {
     setActiveIndex(null);
   };
+  console.log(services);
 
   return (
     <>
