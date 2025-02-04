@@ -4,8 +4,14 @@ import { FaXmark } from "react-icons/fa6";
 const ServicesModal = ({ service, isActive, closeModal }) => {
   return (
     <>
-      <div className={`service-modal ${isActive ? "active" : ""}`}>
-        <div className="service-modal-body">
+      <div
+        onClick={closeModal}
+        className={`service-modal ${isActive ? "active" : ""}`}
+      >
+        <div
+          className="service-modal-body"
+          onClick={(e) => e.stopPropagation()}
+        >
           <FaXmark className="modal-close-btn" onClick={closeModal} />
 
           <h3>{service.title}</h3>

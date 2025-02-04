@@ -2,6 +2,7 @@ import Nav from "../nav/Nav";
 import { FaXing } from "react-icons/fa";
 import { FaAlignRight } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import { RemoveScroll } from "react-remove-scroll";
 
 {
   /* <FaXing /> */
@@ -14,22 +15,14 @@ import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // useEffect(() => {
-  //   if (isMenuOpen) {
-  //     document.querySelector("body").style.overflow = "hidden";
-  //   } else {
-  //     document.querySelector("body").style.overflow = "auto";
-  //   }
-
-    
-  //   return () => {
-  //     document.querySelector("body").style.overflow = "auto";
-  //   };
-  // }, [isMenuOpen]);
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const handleMenuClick = () => { 
+    setIsMenuOpen(false);
+  }
   return (
     <header className="header">
       <div className="container">
@@ -37,7 +30,9 @@ const Header = () => {
           <a href="" className="logo">
             Slava
           </a>
-          <Nav isMenuOpen={isMenuOpen} />
+          <RemoveScroll enabled={isMenuOpen}>
+            <Nav isMenuOpen={isMenuOpen} handleMenuClick={handleMenuClick} />
+          </RemoveScroll>
           <div className="nav-menu-btn" onClick={toggleMenu}>
             {isMenuOpen ? <FaXing /> : <FaAlignRight />}
           </div>

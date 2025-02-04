@@ -1,10 +1,17 @@
 import {
   Header,
-  Footer,
   Home,
   About,
   SkillsInfo,
   Services,
+  Portfolio,
+  GetInTouch,
+  OurClients,
+  ContactSection,
+  Footer,
+ ScrollToTop ,
+ ThemeToggle,
+
 } from "./components/index.js";
 // import { mainImg } from "./assets/images/index.js";
 // import "./index.css"
@@ -18,8 +25,14 @@ function App() {
         <About />
         <SkillsInfo />
         <Services />
+        <Portfolio />
+        <GetInTouch />
+        <OurClients />
+        <ContactSection />
       </main>
       <Footer />
+      <ScrollToTop />
+      <ThemeToggle />
     </>
   );
 }
