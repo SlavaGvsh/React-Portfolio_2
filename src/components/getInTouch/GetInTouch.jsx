@@ -1,10 +1,19 @@
 import { FaPaperPlane } from "react-icons/fa";
 
 import "./GetInTouch.css";
+import { motion } from "motion/react";
+import { slideInVariants } from "../../utils/animation.js";
 
 const GetInTouch = () => {
   return (
-    <div className="get-in-touch sub-section">
+    <motion.div
+      className="get-in-touch sub-section"
+      custom={0}
+      variants={slideInVariants("right", 0.5, 100, true)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+    >
       <div className="container flex-center">
         <div className="contact-card">
           <div className="title">
@@ -18,7 +27,7 @@ const GetInTouch = () => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default GetInTouch;

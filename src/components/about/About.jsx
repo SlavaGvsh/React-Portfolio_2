@@ -3,8 +3,8 @@ import { FaCloudDownloadAlt } from "react-icons/fa";
 import SectionTitle from "../sectionTitle/SectionTitle.jsx";
 import { motion } from "motion/react";
 import { slideInVariants } from "../../utils/animation.js";
-
 import "./About.css";
+import { professionalList } from "../../data/professionalList.js";
 const About = () => {
   return (
     <section className="about section" id="about">
@@ -63,18 +63,12 @@ const About = () => {
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
             >
-              <li className="list-item">
-                <span className="number">5+</span>
-                <span className="text">Years of experience</span>
-              </li>
-              <li className="list-item">
-                <span className="number">3K+</span>
-                <span className="text">Happy Customers</span>
-              </li>
-              <li className="list-item">
-                <span className="number">5+</span>
-                <span className="text">Success Projects</span>
-              </li>
+              {professionalList.map((item) => (
+                <li className="list-item" key={item.id}>
+                  <span className="number">{item.number}</span>
+                  <span className="text">{item.text}</span>
+                </li>
+              ))}
             </motion.ul>
             <motion.a
               href=""

@@ -84,38 +84,53 @@ export const imgVariants = {
 // };
 
 export const slideInVariants = (
-   direction = "right",
-   duration = 0.5,
-   distance = 100,
-   useCustom = false
- ) => {
-   const x = direction === "left" ? -distance : direction === "right" ? distance : 0;
-   const y = direction === "top" ? -distance : direction === "bottom" ? distance : 0;
- 
-   return {
-     hidden: {
-       x: useCustom ? x : 0,
-       y: useCustom ? y : 0,
-       opacity: 0,
-     },
-     visible: (index) => ({
-       x: 0,
-       y: 0,
-       opacity: 1,
-       transition: {
-         delay: useCustom ? index * 0.2 : 0,
-         duration,
-         ease: "easeOut",
-       },
-     }),
-     pulse: {
-       scale: [1, 1.1, 1], // увеличивается до 1.1, затем обратно
-       transition: {
-         duration: 1, // время одного цикла пульсации
-         repeat: Infinity, // бесконечное повторение
-         ease: "easeInOut",
-       },
-     },
-   };
- };
- 
+  direction = "right",
+  duration = 0.5,
+  distance = 100,
+  useCustom = false
+) => {
+  const x =
+    direction === "left" ? -distance : direction === "right" ? distance : 0;
+  const y =
+    direction === "top" ? -distance : direction === "bottom" ? distance : 0;
+
+  return {
+    hidden: {
+      x: useCustom ? x : 0,
+      y: useCustom ? y : 0,
+      opacity: 0,
+    },
+    visible: (index) => ({
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: useCustom ? index * 0.2 : 0,
+        duration,
+        ease: "easeOut",
+      },
+    }),
+    pulse: {
+      scale: [1, 1.1, 1], // увеличивается до 1.1, затем обратно
+      transition: {
+        duration: 1, // время одного цикла пульсации
+        repeat: Infinity, // бесконечное повторение
+        ease: "easeInOut",
+      },
+    },
+  };
+};
+
+export const titleVariants = {
+  hidden: { y: -50, opacity: 0 },
+  visible: { y: 0, opacity: 0.1, transition: { duration: 0.8 } },
+};
+
+export const subtitleVariants = {
+  hidden: { y: -45, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.8, delay: 0.4 },
+  },
+};

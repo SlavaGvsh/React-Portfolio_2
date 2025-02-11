@@ -2,9 +2,10 @@ import SectionTitle from "../../components/sectionTitle/SectionTitle.jsx";
 import Education from "./Education.jsx";
 import Awords from "./Awords.jsx";
 import Skills from "./Skills.jsx";
-
 import WorkExperience from "./WorkExperience.jsx";
 import "./Skills.css";
+import { motion } from "motion/react";
+import { slideInVariants } from "../../utils/animation.js";
 
 const SkillsInfo = () => {
   return (
@@ -14,17 +15,52 @@ const SkillsInfo = () => {
         {/* <h2 className="inner-title">Skills</h2>
         <h3 className="inner-second-title">Skills</h3> */}
         <div className="inner-content">
-          <div className="skills-description">
+          <motion.div
+            className="skills-description"
+            custom={0}
+            variants={slideInVariants("left", 0.5, 50, true)}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <h3>Education & Skills</h3>
             <p>
               For more than 5 years our experts have been accomplishing enough
               with modern Web Development, new generation web and app
               programming language.
             </p>
-          </div>
+          </motion.div>
           <div className="skills-info education-all">
-          <Education/>
-          <Skills/>
+            <motion.div
+              custom={0}
+              variants={slideInVariants("top", 0.5, 50, true)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <Education />
+            </motion.div>
+
+            <motion.div
+              custom={1}
+              variants={slideInVariants("top", 0.5, 50, true)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <Skills />
+            </motion.div>
+
+            <motion.div
+              custom={2}
+              variants={slideInVariants("top", 0.5, 50, true)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <Awords />
+            </motion.div>
+
             {/* <div className="education">
               <h4 className="label">Education</h4>
               <ul className="education-list">
@@ -108,12 +144,20 @@ const SkillsInfo = () => {
                 </li>
               </ul>
             </div> */}
-            <Awords/>
           </div>
           <div className="education work-exp">
-            <h3 className="work-exp-title">Work & Experience</h3>
+            <motion.h3
+              className="work-exp-title"
+              custom={2}
+              variants={slideInVariants("left", 0.5, 50, true)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              Work & Experience
+            </motion.h3>
             <div className="skills-info">
-              <WorkExperience/>
+              <WorkExperience />
               {/* <div className="experience-card">
                 <div className="upper">
                   <h3>Sr. Graphic Designer</h3>

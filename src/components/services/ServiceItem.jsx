@@ -1,6 +1,8 @@
 import { ImArrowUpRight } from "react-icons/im";
 import ServicesModal from "./servicesModal";
 import { useState } from "react";
+import { motion } from "motion/react";
+import { slideInVariants } from "../../utils/animation.js";
 
 const ServiceItem = ({ services }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -16,7 +18,15 @@ const ServiceItem = ({ services }) => {
   return (
     <>
       {services.map((service, index) => (
-        <li className="services-container" key={index}>
+        <motion.li
+          className="services-container"
+          key={index}
+          custom={index}
+          variants={slideInVariants("top", 0.5, 50, true)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+        >
           <div className="service-card">
             <service.icon className="service-icon" />
             <h3>{service.title}</h3>
@@ -30,7 +40,7 @@ const ServiceItem = ({ services }) => {
             isActive={activeIndex === index}
             closeModal={closeModal}
           />
-        </li>
+        </motion.li>
       ))}
     </>
   );
