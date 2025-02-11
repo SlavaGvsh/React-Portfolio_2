@@ -15,14 +15,13 @@ import "./Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const handleMenuClick = () => { 
+  const handleMenuClick = () => {
     setIsMenuOpen(false);
-  }
+  };
   return (
     <header className="header">
       <div className="container">
