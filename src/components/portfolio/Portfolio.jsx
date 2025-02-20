@@ -11,9 +11,9 @@ const Portfolio = () => {
       <div className="container flex-center">
         <SectionTitle title="Portfolio" subTitle="Portfolio" />
         <div className="portfolio-wrapper">
-          {portfolioData.map((item) => {
+          {portfolioData.map((item, index) => {
             <PortfolioItem key={item.id}/>
-            return <PortfolioItem key={item.id} item={item} />;
+            return <PortfolioItem key={item.id} item={item} index ={index} />;
           })}
         </div>
       </div>
